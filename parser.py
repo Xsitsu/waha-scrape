@@ -27,7 +27,7 @@ def _get_name_from_data_sheet(sheet):
 	return div.text
 
 def _get_unit_comp_from_data_sheet(sheet):
-	units = list()
+	units = dict()
 
 	ds2col = sheet.find(class_ = "ds2col")
 	dsRightCol = ds2col.find(class_ = "dsRightСol")
@@ -44,7 +44,7 @@ def _get_unit_comp_from_data_sheet(sheet):
 		tds = tr.find_all("td")
 		num = tds[0].text.replace(" models", "").replace(" model", "")
 		cost = tds[1].find("div").text
-		units.append(Unit(num, cost))
+		units[num] = Unit(num, cost)
 
 	return units
 

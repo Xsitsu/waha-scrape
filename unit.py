@@ -1,7 +1,7 @@
 class Unit:
 	def __init__(self, num_models, cost):
 		self.num_models = num_models
-		self.cost = cost
+		self.cost = int(cost)
 
 	def __str__(self):
 		s = ""
