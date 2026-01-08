@@ -23,7 +23,7 @@ if args.clean:
 data = pagegetter.get_page()
 
 model_list = parser.make_model_list(data)
-for model in model_list:
+for model_name, model in model_list.items():
 	print(model)
 	for unit in model.units:
 		print(f"\t{str(unit)}")

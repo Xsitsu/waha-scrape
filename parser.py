@@ -5,7 +5,7 @@ from unit import Unit
 
 
 def make_model_list(page_data):
-	model_list = list()
+	model_list = dict()
 
 	soup = BeautifulSoup(page_data, 'html.parser')
 	sheets = soup.find_all(class_ = "dsOuterFrame")
@@ -15,7 +15,7 @@ def make_model_list(page_data):
 		# print("Parsing:", unit_name)
 
 		unit_list = _get_unit_comp_from_data_sheet(sheet)
-		model_list.append(Model(model_name, unit_list))
+		model_list[model_name] = Model(model_name, unit_list)
 
 	return model_list 
 
