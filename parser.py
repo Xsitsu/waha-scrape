@@ -13,5 +13,8 @@ def make_unit_list(page_data):
 
 
 def _get_name_from_data_sheet(sheet):
-	return "jeff"
+	banner = sheet.find(class_ = "dsBannerWrap")
+	header = banner.find(class_ = "dsH2Header")
+	div = header.find("div")
+	return div.text
 
