@@ -17,7 +17,10 @@ args = ap.parse_args()
 
 data = pagegetter.get_page()
 
-unit_list = parser.make_unit_list(data)
-print("unit_list:", unit_list)
+model_list = parser.make_model_list(data)
+for model in model_list:
+	print(model)
+	for unit in model.units:
+		print(f"\t{str(unit)}")
 
 
