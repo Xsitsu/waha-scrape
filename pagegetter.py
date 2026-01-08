@@ -9,6 +9,7 @@ URL = "https://wahapedia.ru/wh40k10ed/factions/necrons/datasheets.html"
 
 
 def clean_cache():
+	print("Cleaning cache!")
 	shutil.rmtree(PAGE_CACHE_PATH)
 
 def _url_to_cache_page_name(url):
