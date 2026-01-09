@@ -45,6 +45,9 @@ with open(args.list_file, 'r') as f:
 		if entry[0] == "#":
 			continue
 
+		if entry == "" or entry == "\n":
+			continue
+
 		bits = entry.replace("\n", "").split(",")
 		if len(bits) != 2:
 			raise BadFileException()
