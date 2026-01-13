@@ -1,8 +1,17 @@
 class Model:
-	def __init__(self, name, units):
+	def __init__(self, name, abilities, units):
 		self.name = name
+		self.abilities = abilities
 		self.units = units
 
+	def _ability_string(self):
+		s = ""
+		for abil in self.abilities:
+			s += f"{abil},"
+		if s != "":
+			s = s[:-1]
+		return s
+
 	def __str__(self):
-		return f"Model(name={self.name})"
+		return f"Model(name={self.name}, abilities={self._ability_string()})"
 
