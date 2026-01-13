@@ -4,7 +4,7 @@ class Model:
 		self.abilities = abilities
 		self.units = units
 
-	def _ability_string(self):
+	def get_ability_string(self):
 		s = ""
 		for abil in self.abilities:
 			s += f"{abil},"
@@ -13,5 +13,5 @@ class Model:
 		return s
 
 	def __str__(self):
-		return f"Model(name={self.name}, abilities={self._ability_string()})"
+		return f"Model(name={self.name}, abilities={self.get_ability_string()})"
 
