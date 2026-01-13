@@ -69,7 +69,7 @@ def build_list(list_file):
 			army_list.append(unit)
 			total_points += unit.cost
 
-			print(unit, "\t\t", model_name)
+			print(unit, "\t\t", model)
 
 	print("Total:", total_points)
 
