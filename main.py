@@ -39,7 +39,7 @@ def output_models(model_list):
 	for model_name, model in model_list.items():
 		if ability_req is None or _model_has_abilities(model, ability_req):
 			print(model)
-			for unit in model.units:
+			for cost, unit in model.units.items():
 				print(f"\t{str(unit)}")
 
 
